@@ -53,11 +53,17 @@ Genera un color aleatorio usando `Random.value`, que devuelve un valor entre 0 y
    
 ![ej 1 gif](docs/Movie_002-ezgif.com-video-to-gif-converter.gif)
 ## Ejercicio 2
+1. Primero se crean los objetos desde el `Hierarchy`
+2. Se crean los materiales en `Assets/Materials`
+3. En los ajustes del material, en `Albedo`, se escoge el color
+4. Al seleccionar el objeto, en `Mesh Renderer > Materials`, arrastramos el material para asignarlo
 ```cs
 void Start() {
   Debug.Log(gameObject.name);
 }
 ```
+Para mostrar los nombres de los objetos, simplemente se usa el `Debug.Log`
+
 ![ej 2](docs/ej_2.png)
 ![names](docs/names.png)
 ## Ejercicio 3
