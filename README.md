@@ -50,6 +50,7 @@ Genera un color aleatorio usando `Random.value`, que devuelve un valor entre 0 y
 ```
 1. Obtiene el componente `Renderer` del objeto al que está adunto el script
 2. Si existe, se aplica el color generado
+   
 ![ej 1 gif](docs/Movie_002-ezgif.com-video-to-gif-converter.gif)
 ## Ejercicio 2
 ```cs
