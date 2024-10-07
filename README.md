@@ -235,11 +235,13 @@ void Update() {
 public class ChangeColor : MonoBehaviour {
   private Renderer objRenderer;
 ```
+- `objRenderer` almacena el componente `Renderer` del objeto. Se utiliza para acceder y cambiar el color del material del objeto
 ```cs
 void Start() {
   objRenderer = GetComponent<Renderer>();
 }
 ```
+Se obtiene el componente `Renderer` del objeto al que está adjuntado el script
 ```cs
 void Update() {
   if (gameObject.CompareTag("green_cylinder") && Input.GetKeyDown(KeyCode.C)) {
@@ -250,6 +252,10 @@ void Update() {
   }
 }
 ```
+1. Hay dos expresiones condicionales. En ambas se comprueba el objeto en cuestión y la tecla presionada.
+2. Si es el `cilindro` con ese tag y además se está pulsando la tecla `C`, solo entonces se cambiará el color del cilindro
+3. Si es el `cubo` con ese tag y además se está pulsando la tecla `flecha hacia arriba`, solo entonces se cambiará el color del cubo
+    
 ![cambio color](docs/ezgif.com-video-to-gif-converter.gif)
 ## Ejercicio 8
 ```cs
