@@ -9,9 +9,9 @@ public class ColorChanger : MonoBehaviour {
   public int frameDelay = 120;
   private int frameCounter;
 ```
-1. `color` almacena el color actual que se aplicará al objeto
-2. `frameDelay` es el tiempo en frames que debe pasar antes de cambiar el color del objeto
-3. `frameCounter` es el contador que se incrementa en cada frame para llevar un control del tiempo
+- `color` almacena el color actual que se aplicará al objeto
+- `frameDelay` es el tiempo en frames que debe pasar antes de cambiar el color del objeto
+- `frameCounter` es el contador que se incrementa en cada frame para llevar un control del tiempo
 ```cs
   void Start() {
     ChangeRandomColor();
@@ -75,6 +75,11 @@ public class VectorInfo : MonoBehaviour {
   public float distancia;
   public string vector_mayor_altura;
 ```
+- `vector_1, vector_2` son vectores que se pueden configurar desde el inspector
+- `magnitud_1, magnitud_2` almacenan las magnitudes de ambos vectores respectivamente
+- `angulo` almacena el ángulo entre los dos vectores
+- `distancia` almacena la distancia entre ambos vectores
+- `vector_mayor_altura`guarda un mensaje indicando cuál vector está a mayor altura
 ```cs
   void Start() {
     magnitud_1 = vector_1.magnitude;
@@ -98,24 +103,12 @@ public class VectorInfo : MonoBehaviour {
     Debug.Log(vector_mayor_altura);
   }
 ```
-```cs
-  void Update() {
-    magnitud_1 = vector_1.magnitude;
-    magnitud_2 = vector_2.magnitude;
+1. Se asignan las magnitudes de los vectores
+2. Se calcula el ángulo entre los vectores con `Vector3.Angle`
+3. Se calcula la distancia entre los vectores con `Vector3.Distance`
+4. Se comprueban los componentes `y` de ambos vectores y se indica cuál está a mayor altura. También puede indicar que tienen la misma altura
+5. Se muestran todos los resultados
 
-    angulo = Vector3.Angle(vector_1, vector_2);
-    distancia = Vector3.Distance(vector_1, vector_2);
-
-    if (vector_1.y > vector_2.y) {
-      vector_mayor_altura = "Vector 1 está a mayor altura";
-    } else if (vector_1.y < vector_2.y) {
-      vector_mayor_altura = "Vector 1 está a mayor altura";
-    } else {
-      vector_mayor_altura = "Ambos vectores están a la misma altura";
-    }
-  }
-}
-```
 ![ej 3.1](docs/ej3_1.png)
 ![ej 3.2](docs/ej3_2.png)
 ![ej 3.3](docs/ej3_3.png)
