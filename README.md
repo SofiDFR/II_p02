@@ -9,14 +9,17 @@ public class ColorChanger : MonoBehaviour {
   public int frameDelay = 120;
   private int frameCounter;
 ```
-
+1. `color` almacena el color actual que se aplicará al objeto
+2. `frameDelay` es el tiempo en frames que debe pasar antes de cambiar el color del objeto
+3. `frameCounter` es el contador que se incrementa en cada frame para llevar un control del tiempo
 ```cs
   void Start() {
     ChangeRandomColor();
     ApplyColor();
   }
 ```
-
+1. Primero cambia a un color aleatorio desde el inicio
+2. Aplica el color recién generado al objeto
 ```cs
   void Update() {
     frameCounter++;
@@ -27,13 +30,15 @@ public class ColorChanger : MonoBehaviour {
     }
   }
 ```
-
+1. Se incrementa el contador de frames
+2. Verifica si ha pasado el tiempo suficiente
+3. Si es así, se reinicia el contador, se genera un color nuevo aleatorio y se aplica al objeto
 ```cs
   void ChangeRandomColor() {
     color = new Color(Random.value, Random.value, Random.value, Random.value);
   }
 ```
-
+Genera un color aleatorio usando `Random.value`, que devuelve un valor entre 0 y 1 para cada componente del color (rojo, verde, azul, alfa)
 ```cs
   void ApplyColor() {
     Renderer renderer = GetComponent<Renderer>();
@@ -43,6 +48,8 @@ public class ColorChanger : MonoBehaviour {
   }
 }
 ```
+1. Obtiene el componente `Renderer` del objeto al que está adunto el script
+2. Si existe, se aplica el color generado
 ![ej 1 gif](docs/Movie_002-ezgif.com-video-to-gif-converter.gif)
 ## Ejercicio 2
 ```cs
