@@ -47,6 +47,8 @@ void Start() {
   Debug.Log(gameObject.name);
 }
 ```
+![ej 2](docs/ej_2.png)
+![names](docs/names.png)
 ## Ejercicio 3
 ```cs
 public class VectorInfo : MonoBehaviour {
@@ -97,6 +99,9 @@ public class VectorInfo : MonoBehaviour {
   }
 }
 ```
+![ej 3.1](docs/ej3_1.png)
+![ej 3.2](docs/ej3_2.png)
+![ej 3.3](docs/ej3_3.png)
 ## Ejercicio 4
 ```cs
 public class ShowPosition : MonoBehaviour {
@@ -119,6 +124,7 @@ void OnGUI() {
   GUI.Label(new Rect(20, 20, 300, 40), "Posición de la Esfera: " + posicion, estiloTexto);
 }
 ```
+![ej 4](docs/ej_4.png)
 ## Ejercicio 5
 ```cs
 public class ObjDistances : MonoBehaviour {
@@ -142,6 +148,7 @@ public class ObjDistances : MonoBehaviour {
     Debug.Log("Distancia Esfera-Cilindro: " + distanciaCilindro);
   }
 ```
+![ej 5](docs/ej_5.png)
 ## Ejercicio 6
 ```cs
 public class Marcador : MonoBehaviour {
@@ -180,6 +187,7 @@ void Update() {
   }
 }
 ```
+![obj moving](docs/Movie_003-ezgif.com-optimize.gif)
 ## Ejercicio 7
 ```cs
 public class ChangeColor : MonoBehaviour {
