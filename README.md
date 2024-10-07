@@ -187,6 +187,7 @@ void Update() {
   }
 }
 ```
+![marcador](docs/marcador.png)
 ![obj moving](docs/Movie_003-ezgif.com-optimize.gif)
 ## Ejercicio 7
 ```cs
@@ -208,7 +209,7 @@ void Update() {
   }
 }
 ```
-
+![cambio color](docs/ezgif.com-video-to-gif-converter.gif)
 ## Ejercicio 8
 ```cs
 public class ManageSpheres : MonoBehaviour {
@@ -275,3 +276,4 @@ GameObject ObtenerEsferaMasLejana(Vector3 posicionCubo) {
   return esferaMasLejana;
 }
 ```
+![cambio color]("docs/ezgif.com-video-to-gif-converter (1).gif")
