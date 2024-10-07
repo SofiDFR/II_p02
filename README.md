@@ -181,14 +181,21 @@ public class Marcador : MonoBehaviour {
   public Vector3[] desplazamientos;
 }
 ```
+Este script se le asigna al objeto vacío `Marcador`. En esencia contendrá un vector de desplazamientos.
+
+***Nota:*** Los índices del vector indican a qué objeto de la escena se refiere, pues cuando se le asigna el script de debajo a los vectores, en el inspector se le debe asignar
+un número (índice del vector correspondiente) a cada objeto
 ```cs
 public class MoveObjects : MonoBehaviour {
-    private Vector3 posicionOriginal;
     private Marcador marcador;
     public int indice;
     private Vector3 desplazamiento;
     private bool saltoPresionado = false;
 ```
+- `marcador` hace referencia al componente Marcador. Se usa para acceder al array de desplazamientos
+- `indice` determina qué desplazamiento se le aplicará al objeto
+- `desplazamiento` almacena el desplazamiento que se le aplicará al objeto
+- `saltoPresionado` controla si el botón de salto (el espacio) ha sido presionado
 ```cs
 void Start() {
   marcador = GameObject.Find("Marcador").GetComponent<Marcador>();
@@ -200,6 +207,9 @@ void Start() {
   }
 }
 ```
+1. Se obtiene el componente `Marcador` del objeto `Marcador`, que contiene los desplazamientos
+2. Se verifica si el índice es válido
+3. Si lo es, asigna el desplazamiento corresponiente a la variable `desplazamiento`. Si no, muestra un mensaje de error
 ```cs
 void Update() {
   float entradaSalto = Input.GetAxis("Jump");
@@ -213,6 +223,11 @@ void Update() {
   }
 }
 ```
+1. Se captura la entrada del usuario. Por defecto el eje `Jump` está asociado con la tecla `espacio`
+2. Se verifica si el usuario ha pulsado el botón de salto y si no se ha registrado aún. Esto previene que el objeto se mueva continuamente mientras el botón está presionado.
+3. Se calcula y se aplica el nuevo desplazamiento
+4. Si el botón de salto no está presionado, `saltoPresionado` se resetea a `false` para permitir que el objeto se mueva nuevamente cuando se vuelva a pulsar el espacio
+
 ![marcador](docs/marcador.png)
 ![obj moving](docs/Movie_003-ezgif.com-optimize.gif)
 ## Ejercicio 7
