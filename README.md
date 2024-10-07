@@ -144,12 +144,15 @@ Dibuja en la pantalla la posición de la esfera. *Rect(PosX, PosY, ancho, alto)*
 
 ![ej 4](docs/ej_4.png)
 ## Ejercicio 5
+***Nota:*** El script está adjunto a las esfera
 ```cs
 public class ObjDistances : MonoBehaviour {
   private GameObject cubo;
   private GameObject cilindro;
   private Transform transformCubo, transformCilindro, transformEsfera;
 ```
+- `cubo` y `cilindro` son variables que almacenan las referencias a los objetos cubo y cilindro de la escena
+- `transformCubo, transformCilindro, transformEsfera` almacenan las transformaciones (posición rotación y escala) de los objetos.
 ```cs
   void Start() {
     cubo = GameObject.FindWithTag("red_cube");
@@ -166,6 +169,11 @@ public class ObjDistances : MonoBehaviour {
     Debug.Log("Distancia Esfera-Cilindro: " + distanciaCilindro);
   }
 ```
+1. Se buscan los objetos con las etiquetas `red_cube` y `green_cylinder` y se asignan a sus variables correspondientes
+2. Se obtienen los componentes `Transform` de cada objeto para acceder a sus posiciones
+3. Mediante `Vector3.Distance` se hallan las distancias de `esfera-cubo` y `esfera-cilindro`
+4. Se imprime por consola el resultado
+
 ![ej 5](docs/ej_5.png)
 ## Ejercicio 6
 ```cs
