@@ -264,12 +264,17 @@ public class ManageSpheres : MonoBehaviour {
   private GameObject[] esferasTipo2;
   private Vector3 posicionCuboAnterior;
 ```
+- `cubo` es una referencia al objeto cubo de la escena
+- `esferasTipo2` alamcena todas las esferas de tipo dos
+- - `posicionCuboAnterior` guarda la posición anterior del cubo para detectar cuándo ha cambiado de lugar
 ```cs
 void Start() {
   esferasTipo2 = GameObject.FindGameObjectsWithTag("type2_sphere");
   posicionCuboAnterior = cubo.transform.position;
 }
 ```
+1. Busca y almacena todas las esferas de tipo 2 de la escena
+2. Guarda la posición anterior del cubo
 ```cs
 void Update() {
   if (esferasTipo2.Length == 0) return;
@@ -293,6 +298,11 @@ void Update() {
   }
 }
 ```
+1. Si no hay esferas con etiqueta `type2_sphere`, el método Update acaba porque no hay nada que procesar
+2. Se comprueba si la posición actual del cubo es diferente a la anterior
+3. Si lo es, se llama al método `ObtenerEsferaMasCercana` para encontrar la esfera más cercana al cubo y se incrementa su altura por `0.1`. También
+   actualiza la posición anterior del cubo
+4. Si el usuario presiona la tecla `espacio`, se llama al método `ObtenerEsferaMasLejana` para obtener la esfera más lejana al cubo y se le cambia su color a uno aleatorio
 ```cs
 GameObject ObtenerEsferaMasCercana(Vector3 posicionCubo) {
   GameObject esferaMasCercana = null;
@@ -308,6 +318,10 @@ GameObject ObtenerEsferaMasCercana(Vector3 posicionCubo) {
   return esferaMasCercana;
 }
 ```
+1. Inicializa `minDistancia` a un valor muy grande
+2. Itera sobre todas las esferas y calcula la distancia entre el cubo y cada esfera
+3. Si encuentra una distancia menor, actualiza `esferaMasCercana`
+4. Retorna la esfera más cercana encontrada
 ```cs
 GameObject ObtenerEsferaMasLejana(Vector3 posicionCubo) {
   GameObject esferaMasLejana = null;
@@ -323,4 +337,12 @@ GameObject ObtenerEsferaMasLejana(Vector3 posicionCubo) {
   return esferaMasLejana;
 }
 ```
+1. Inicializa `manDistancia` a la mínima distancia que puede haber entre dos objetos (0)
+2. Itera sobre todas las esferas y calcula la distancia entre el cubo y cada esfera
+3. Si encuentra una distancia mayor, actualiza `esferaMasLejana`
+4. Retorna la esfera más lejana encontrada
+   
 ![cambio color](docs/ezgif.com-video-to-gif-converter_1.gif)
+***Nota:*** A medida que se va moviendo el cubo, se ve como van cambiando las esferas `más cercana` y `más lejana`, por eso a medida de que se acerca el cubo, la esfera de atrás deja de subir y empieza a subir la de delante. 
+
+***Nota:*** También mencionar que las dos esferas blancas de la izquierda con de tipo 1, y por eso el cubo no tiene efecto sobre ellas
