@@ -111,6 +111,7 @@ public class VectorInfo : MonoBehaviour {
 
 ![ej 3.1](docs/ej3_1.png)
 ![ej 3.2](docs/ej3_2.png)
+
 ![ej 3.3](docs/ej3_3.png)
 ## Ejercicio 4
 ```cs
@@ -118,22 +119,29 @@ public class ShowPosition : MonoBehaviour {
   private Vector3 posicion;
   private GUIStyle estiloTexto;
 ```
+- `posicion` se almacena la posición actual del objeto
+- `estilotexto` define el estilo del texto que aparecerá en pantalla
 ```cs
 void Start() {
   estiloTexto = new GUIStyle();
   estiloTexto.normal.textColor = Color.black;
+  estiloTexto.fontSize = 50;
 }
 ```
+Se crea una nueva instancia de `GUIStyle`, se establece el color del texto en negro y el tamaño de la letra a 50
 ```cs
 void Update() {
   posicion = transform.position;
 }
 ```
+En cada fotograma se comprueba y actualiza la posición, pos si se mueve
 ```cs
 void OnGUI() {
   GUI.Label(new Rect(20, 20, 300, 40), "Posición de la Esfera: " + posicion, estiloTexto);
 }
 ```
+Dibuja en la pantalla la posición de la esfera. *Rect(PosX, PosY, ancho, alto)*
+
 ![ej 4](docs/ej_4.png)
 ## Ejercicio 5
 ```cs
