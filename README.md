@@ -1,5 +1,8 @@
 # Interfaces Inteligentes P02
 ## Ejercicio 1: ColorChanger
+Primero inicializamos las variables de la clase
+
+***Nota:*** si es `public` se puede acceder a él desde el inspector. Si es `private`, no.
 ```cs
 public class ColorChanger : MonoBehaviour {
   private Color color;
