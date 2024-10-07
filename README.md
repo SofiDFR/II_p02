@@ -276,4 +276,4 @@ GameObject ObtenerEsferaMasLejana(Vector3 posicionCubo) {
   return esferaMasLejana;
 }
 ```
-![cambio color]("docs/ezgif.com-video-to-gif-converter (1).gif")
+![cambio color](docs/ezgif.com-video-to-gif-converter_1.gif)
