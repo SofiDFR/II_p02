@@ -40,6 +40,7 @@ public class ColorChanger : MonoBehaviour {
   }
 }
 ```
+![ej 1 gif](docs/Movie_002-ezgif.com-video-to-gif-converter.gif)
 ## Ejercicio 2
 ```cs
 void Start() {
