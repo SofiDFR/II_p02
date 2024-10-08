@@ -343,6 +343,7 @@ GameObject ObtenerEsferaMasLejana(Vector3 posicionCubo) {
 4. Retorna la esfera más lejana encontrada
    
 ![cambio color](docs/ezgif.com-video-to-gif-converter_1.gif)
+
 ***Nota:*** A medida que se va moviendo el cubo, se ve como van cambiando las esferas `más cercana` y `más lejana`, por eso a medida de que se acerca el cubo, la esfera de atrás deja de subir y empieza a subir la de delante. 
 
 ***Nota:*** También mencionar que las dos esferas blancas de la izquierda con de tipo 1, y por eso el cubo no tiene efecto sobre ellas
